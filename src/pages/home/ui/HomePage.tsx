@@ -18,7 +18,7 @@ function HomePage() {
     const debouncedSearchTerm = useDebounce(searchTerm, 500);
   
     const { data: mealData, isLoading: loadingMeals } = useSearchMealsQuery(debouncedSearchTerm || ''); 
-    const { data: categoriesData, isLoading: loadingCategories } = useGetCategoriesQuery(); 
+    const { data: categoriesData, isLoading: loadingCategories } = useGetCategoriesQuery(''); 
 
     const handleAddToCart = (meal: any) => {
         const mealWithIngredients = {
